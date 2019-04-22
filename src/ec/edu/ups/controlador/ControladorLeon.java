@@ -1,5 +1,5 @@
 
-package Controlador;
+package ec.edu.ups.controlador;
 
 import ec.edu.ups.clases.Leon;
 import java.util.HashSet;

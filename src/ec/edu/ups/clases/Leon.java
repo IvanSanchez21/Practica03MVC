@@ -1,7 +1,7 @@
 
 package ec.edu.ups.clases;
 
-import inferfaces.Acciones;
+import ec.edu.ups.inferfaces.Acciones;
 
 /**
  *
