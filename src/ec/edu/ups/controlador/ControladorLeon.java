@@ -17,36 +17,43 @@ public class ControladorLeon {
         lista = new HashSet<>();
         codigo = 0;
     }
-
-    public void crear(Leon objeto) {
+    
+    public void create(Leon objeto){
         codigo++;
-        objeto.setCodigo(codigo);
+        objeto.setCodigo(this.codigo);
         lista.add(objeto);
     }
-
-    public Leon read(int codigo) {
-        for (Leon leon : lista) {
-            if (leon.getCodigo() == codigo) {
+    
+    public Leon read(int codigo){
+        for(Leon leon : lista){
+            if(codigo == leon.getCodigo()){
                 return leon;
             }
         }
         return null;
     }
-
-    public void update(Leon objeto) {
-        if (lista.contains(objeto)) {
+    
+    public void update(Leon objeto){
+        if(lista.contains(objeto)){
             lista.remove(objeto);
             lista.add(objeto);
         }
     }
-
-    public void delete(int codigo) {
-        for (Leon leon : lista) {
-            if (leon.getCodigo() == codigo) {
-                lista.remove(leon);
+    
+    public void delete(int codigo){
+        
+        for(Leon objeto : lista){
+            if(objeto.getCodigo() == codigo){
+                lista.remove(objeto);
                 break;
             }
         }
+        
     }
-
+    
+    public void imprimir(){
+        for (Leon leon : lista) {
+            System.out.println(leon.getTipoAnimal());
+        }
+    }
 }

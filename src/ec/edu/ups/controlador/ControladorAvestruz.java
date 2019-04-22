@@ -10,49 +10,49 @@ import java.util.TreeSet;
  * @author ivan
  */
 public class ControladorAvestruz {
-    private SortedSet<Avestruz> listaOrdenada;
+    private SortedSet <Avestruz> lista;
     private int codigo;
 
     public ControladorAvestruz() {
-        listaOrdenada = new TreeSet<>();
-        codigo = 1;
+        lista = new TreeSet<>();
+        codigo = 0;
     }
     
     public void create(Avestruz objeto){
         codigo++;
         objeto.setCodigo(codigo);
-        listaOrdenada.add(objeto);
+        lista.add(objeto);
     }
     
     public Avestruz read(int codigo){
-        for (Avestruz avestruz : listaOrdenada) {
-            if(avestruz.getCodigo() == codigo){
+        for(Avestruz avestruz : lista){
+            if(avestruz.getCodigo() == (codigo)){
                 return avestruz;
             }
         }
         return null;
-    }            
+    }
     
     public void update(Avestruz objeto){
-        if(listaOrdenada.contains(objeto)){
-            listaOrdenada.remove(objeto);
-            listaOrdenada.add(objeto);
+        if(lista.contains(objeto)){
+            lista.remove(objeto);
+            lista.add(objeto);
         }
     }
     
     public void delete(int codigo){
-        for (Avestruz avestruz : listaOrdenada) {
-            if(avestruz.getCodigo() == codigo){
-                listaOrdenada.remove(avestruz);
+        for(Avestruz objeto : lista){
+            if(objeto.getCodigo() == codigo){
+                lista.remove(objeto);
                 break;
             }
         }
     }
     
-    public void printAll(){
-        System.out.println("Lista Ordenada por nombre");
-        for (Avestruz avestruz : listaOrdenada) {
-            System.out.println(avestruz);
+    //revisar get.Codigo
+    public void imprimir(){
+        for (Avestruz avestruz : lista) {
+            System.out.println(avestruz.getTipoAnimal());
         }
     }
 }

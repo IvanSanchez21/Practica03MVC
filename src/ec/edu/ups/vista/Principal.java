@@ -57,55 +57,87 @@ public class Principal {
 
                         switch (opcionMenuLeon) {
                             case 1:
-                                Leon obj = new Leon();
-
-                                System.out.println("Números de Dientes: ");
-                                int numDiente = entrada.nextInt();
-                                obj.setNumDientes(numDiente);
-
+                                System.out.print("Ingrese el tipo de Animal: ");
+                                String animal = entrada.next();
+                                System.out.print("Ingrese tamaño: ");
+                                int tamaño = entrada.nextInt();
+                                System.out.print("Ingrese tipo de Habitad: ");
+                                String habitad = entrada.next();
+                                System.out.print("Ingrese el Peso del Animal: ");
+                                int peso = entrada.nextInt();
+                                
+                                System.out.print("Ingrese el número de Patas: ");
+                                String Patas = entrada.next();
+                                System.out.print("Tipo de reproducción: ");
+                                String reproduccion = entrada.next();
+                                System.out.print("Velocidad: ");
+                                int velocidad = entrada.nextInt();
+                                System.out.print("Tipo de Comida: ");
+                                String comida = entrada.next();
+                                
+                                System.out.print("Ingrese números de Dientes del León: ");
+                                int diente = entrada.nextInt();
                                 System.out.println("Color del pelaje: ");
-                                String colorPelaje = entrada.next();
-                                obj.setColorPelaje(colorPelaje);
-
+                                String pelaje = entrada.next();
                                 System.out.println("Tamaño Melena: ");
-                                int tamañoMelena = entrada.nextInt();
-                                obj.setTamañoMelena(tamañoMelena);
-
+                                int melena = entrada.nextInt();
                                 System.out.println("Medida de las Garras: ");
-                                int medGarras = entrada.nextInt();
-                                obj.setNumGarras(medGarras);
+                                int garras = entrada.nextInt();
+                                
+                                Leon objeto = new Leon(diente, pelaje, melena, garras, garras, reproduccion, velocidad, reproduccion, peso, animal, tamaño, habitad, peso);
+                                leon.create(objeto);
                                 break;
 
                             case 2:
                                 System.out.println("Ingrese el código León");
-                                int codigo2 = entrada.nextInt();
-                                System.out.println(ControladorLeon.read(codigo2));
+                                int codigo = entrada.nextInt();
+                                System.out.println(leon.read(codigo));
                                 break;
 
                             case 3:
-                                obj = new Leon();
-
-                                System.out.println("Números de Dientes: ");
-                                numDiente = entrada.nextInt();
-                                obj.setNumDientes(numDiente);
-
-                                System.out.println("Color del Pelaje: ");
-                                colorPelaje = entrada.next();
-                                obj.setColorPelaje(colorPelaje);
-
-                                System.out.println("Tamaño de la Melena: ");
-                                tamañoMelena = entrada.nextInt();
-                                obj.setTamañoMelena(tamañoMelena);
-
+                                System.out.println("Ingrese el codigo del profesional");
+                                codigo = entrada.nextInt();
+                                
+                                if (leon.read(codigo) != null) {
+                                System.out.print("Ingrese el tipo de Animal: ");
+                                animal = entrada.next();
+                                System.out.print("Ingrese tamaño: ");
+                                tamaño = entrada.nextInt();
+                                System.out.print("Ingrese tipo de Habitad: ");
+                                habitad = entrada.next();
+                                System.out.print("Ingrese el Peso del Animal: ");
+                                peso = entrada.nextInt();
+                                
+                                System.out.print("Ingrese el número de Patas: ");
+                                Patas = entrada.next();
+                                System.out.print("Tipo de reproducción: ");
+                                reproduccion = entrada.next();
+                                System.out.print("Velocidad: ");
+                                velocidad = entrada.nextInt();
+                                System.out.print("Tipo de Comida: ");
+                                comida = entrada.next();
+                                
+                                System.out.print("Ingrese números de Dientes del León: ");
+                                diente = entrada.nextInt();
+                                System.out.println("Color del pelaje: ");
+                                pelaje = entrada.next();
+                                System.out.println("Tamaño Melena: ");
+                                melena = entrada.nextInt();
                                 System.out.println("Medida de las Garras: ");
-                                medGarras = entrada.nextInt();
-                                obj.setNumGarras(medGarras);
+                                garras = entrada.nextInt();
+                                
+                                objeto = new Leon(diente, pelaje, melena, garras, garras, reproduccion, velocidad, reproduccion, codigo, animal, tamaño, habitad, peso);
+                                objeto.setCodigo(codigo);
+                                leon.update(objeto);
+                                }else {
+                                    System.out.println("El tipo de león no existe");
+                                }
                                 break;
 
                             case 4:
-                                System.out.println("Dato a eliminar");
-                                numDiente = entrada.nextInt();
-                                ControladorLeon.delete(numDiente)
+                                System.out.println("Ingrese el codigo del leòn que va a eliminar");
+                                codigo = entrada.nextInt();
+                                leon.delete(codigo);
                                 break;
 
                             case 5:
@@ -129,55 +161,86 @@ public class Principal {
 
                         switch (opcionMenuAvestruz) {
                             case 1:
-                                Avestruz obj = new Avestruz();
-
+                                System.out.print("Ingrese el tipo de Animal: ");
+                                String animal = entrada.next();
+                                System.out.print("Ingrese tamaño: ");
+                                int tamaño = entrada.nextInt();
+                                System.out.print("Ingrese tipo de Habitad: ");
+                                String habitad = entrada.next();
+                                System.out.print("Ingrese el Peso del Animal: ");
+                                int peso = entrada.nextInt();
+                                
+                                System.out.print("Ingrese el número de Patas: ");
+                                String Patas = entrada.next();
+                                System.out.print("Tipo de reproducción: ");
+                                String reproduccion = entrada.next();
+                                System.out.print("Velocidad: ");
+                                int velocidad = entrada.nextInt();
+                                System.out.print("Tipo de Comida: ");
+                                String comida = entrada.next();
+                                
                                 System.out.println("Tamaño de las Alas: ");
-                                int tamañoAlas = entrada.nextInt();
-                                obj.setTamañoAlas(tamañoAlas);
-
+                                int alas = entrada.nextInt();
                                 System.out.println("Longuitud del Cuello: ");
-                                String longuitudCuello = entrada.next();
-                                obj.setLonguitudCuello(opcionMenuPulpo);
-
+                                String cuello = entrada.next();
                                 System.out.println("Número de Garras: ");
-                                int numGarras = entrada.nextInt();
-                                obj.setNumGarras(numGarras);
-
+                                int garras = entrada.nextInt();
                                 System.out.println("Tamaño del Pico: ");
-                                int tamañoPico = entrada.nextInt();
-                                obj.setTamñanoPico(tamañoPico);
+                                int pico = entrada.nextInt();
+                                
+                                Avestruz objeto = new Avestruz(tamaño, tamaño, pico, garras, alas, reproduccion, velocidad, reproduccion, pico, animal, tamaño, habitad, peso); 
+                                avestruz.create(objeto);
                                 break;
 
                             case 2:
-                                System.out.println("Ingrese el codigo de Avestruz");
-                                int codigo2 = entrada.nextInt();
-                                System.out.println(ControladorAvestruz.read(codigo2));
-                                break;
+                               System.out.println("Ingrese el codigo de Avestruz");
+                                int codigo = entrada.nextInt();
+                                System.out.println(avestruz.read(codigo));
+                               break;
 
                             case 3:
-                                obj = new Avestruz();
-
+                                System.out.print("Ingrese el código de Avestruz: ");
+                                codigo = entrada.nextInt();
+                                if(avestruz.read(codigo) != null){
+                                
+                                System.out.print("Ingrese el tipo de Animal: ");
+                                animal = entrada.next();
+                                System.out.print("Ingrese tamaño: ");
+                                tamaño = entrada.nextInt();
+                                System.out.print("Ingrese tipo de Habitad: ");
+                                habitad = entrada.next();
+                                System.out.print("Ingrese el Peso del Animal: ");
+                                peso = entrada.nextInt();
+                                
+                                System.out.print("Ingrese el número de Patas: ");
+                                Patas = entrada.next();
+                                System.out.print("Tipo de reproducción: ");
+                                reproduccion = entrada.next();
+                                System.out.print("Velocidad: ");
+                                velocidad = entrada.nextInt();
+                                System.out.print("Tipo de Comida: ");
+                                comida = entrada.next();
+                                
                                 System.out.println("Tamaño de las Alas: ");
-                                tamañoAlas = entrada.nextInt();
-                                obj.setTamañoAlas(tamañoAlas);
-
+                                alas = entrada.nextInt();
                                 System.out.println("Longuitud del Cuello: ");
-                                longuitudCuello = entrada.next();
-                                obj.setLonguitudCuello(opcionMenuPulpo);
-
+                                cuello = entrada.next();
                                 System.out.println("Número de Garras: ");
-                                numGarras = entrada.nextInt();
-                                obj.setNumGarras(numGarras);
-
+                                garras = entrada.nextInt();
                                 System.out.println("Tamaño del Pico: ");
-                                tamañoPico = entrada.nextInt();
-                                obj.setTamñanoPico(tamañoPico);
+                                pico = entrada.nextInt();
+                                objeto = new Avestruz(tamaño, tamaño, codigo, garras, alas, reproduccion, velocidad, reproduccion, codigo, animal, tamaño, habitad, peso);
+                                objeto.setCodigo(codigo);
+                                avestruz.update(objeto);
+                                }else {
+                                    System.out.println("El Avestruz no existe");
+                                }
                                 break;
 
                             case 4:
-                                System.out.println("Ingrese el codigo que va a eliminar");
-                                codigo2 = entrada.nextInt();
-                                controladorAvestuz.delete(codigo2);
+                                System.out.println("Ingrese el codigo del no profesional que va a eliminar");
+                                codigo = entrada.nextInt();
+                                avestruz.delete(codigo);
                                 break;
 
                             case 5:
@@ -188,8 +251,45 @@ public class Principal {
                     break;
 
                 case 3:
-                    //opcion para el crud de computador
+                    //opcion para el crud de pulpo
                     do {
+                        System.out.println("MENU AVESTRUZ");
+                        System.out.println("1. Create");
+                        System.out.println("2. Read");
+                        System.out.println("3. Update");
+                        System.out.println("4. Delete");
+                        System.out.println("5. Regresar al menu principal");
+                        System.out.println("Selecciona una opción");
+                        opcionMenuPulpo = entrada.nextInt();
+                        
+                        switch (opcionMenuPulpo) {
+                            case 1:
+                                System.out.print("Ingrese el tipo de Animal: ");
+                                String animal = entrada.next();
+                                System.out.print("Ingrese tamaño: ");
+                                int tamaño = entrada.nextInt();
+                                System.out.print("Ingrese tipo de Habitad: ");
+                                String habitad = entrada.next();
+                                System.out.print("Ingrese el Peso del Animal: ");
+                                int peso = entrada.nextInt();
+                                
+                                System.out.print("Ingrese el número de Patas: ");
+                                String Patas = entrada.next();
+                                System.out.print("Tipo de reproducción: ");
+                                String reproduccion = entrada.next();
+                                System.out.print("Velocidad: ");
+                                int velocidad = entrada.nextInt();
+                                System.out.print("Tipo de Comida: ");
+                                String comida = entrada.next();
+                                
+                                System.out.print("Ingrese número de tentaculos: ");
+                                int tentanculos = entrada.nextInt();
+                                
+                                
+                            
+                        }
+                            
+                        
 
                     } while (opcionMenuPulpo != 5);
                     break;
