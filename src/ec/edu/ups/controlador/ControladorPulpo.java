@@ -2,54 +2,44 @@
 package ec.edu.ups.controlador;
 
 import ec.edu.ups.clases.Pulpo;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  *
  * @author ivan
  */
 public class ControladorPulpo {
-   private List <Pulpo> lista;
+   private Map<Integer, Pulpo> lista;
     private int codigo;
 
     public ControladorPulpo() {
-        lista = new ArrayList<>();
+        lista = new TreeMap<>();
         codigo = 0;
     }
     
     public void create(Pulpo objeto){
         codigo++;
         objeto.setCodigo(codigo);
-        lista.add(objeto);
+        lista.put(codigo, objeto);
     }
     
     public Pulpo read(int codigo){
-        for(Pulpo pulpo : lista){
-            if(pulpo.getCodigo() == codigo){
-                return pulpo;
-            }
+        if(lista.get(codigo) != null){
+            return lista.get(codigo);
         }
         return null;
     }
     
     public void update(Pulpo objeto){
-        for(int i = 0; i < lista.size(); i++){
-            Pulpo elemento = lista.get(i);
-            if(elemento.getCodigo() == objeto.getCodigo()){
-                lista.set(i, objeto);
-                break;
-            }
-        }
+        lista.put(objeto.getCodigo(), objeto);
     }
     
     public void delete(int codigo){
-        for(int i = 0; i < lista.size(); i++){
-            Pulpo elemento = lista.get(i);
-            if(elemento.getCodigo() == codigo){
-                lista.remove(i);
-                break;
-            }
-        }
+        lista.remove(codigo);
+    }
+    
+    public void imprimir(){
+        System.out.println(lista.entrySet());
     }
 }
