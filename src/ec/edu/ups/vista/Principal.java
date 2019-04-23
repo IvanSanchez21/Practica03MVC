@@ -97,7 +97,7 @@ public class Principal {
                                 break;
 
                             case 3:
-                                System.out.println("Ingrese el codigo del profesional");
+                                System.out.println("Ingrese el codigo del León");
                                 codigo = entrada.nextInt();
 
                                 if (leon.read(codigo) != null) {
@@ -107,7 +107,7 @@ public class Principal {
                                     tamaño = entrada.nextInt();
                                     System.out.print("Ingrese tipo de Habitad: ");
                                     habitad = entrada.next();
-                                    System.out.print("Ingrese el Peso del Animal: ");
+                                    System.out.print("Ingrese el Peso: ");
                                     peso = entrada.nextInt();
 
                                     System.out.print("Ingrese el número de Patas: ");
@@ -119,7 +119,7 @@ public class Principal {
                                     System.out.print("Tipo de Comida: ");
                                     comida = entrada.next();
 
-                                    System.out.print("Ingrese números de Dientes del León: ");
+                                    System.out.print("Ingrese números de Dientes: ");
                                     diente = entrada.nextInt();
                                     System.out.println("Color del pelaje: ");
                                     pelaje = entrada.next();
@@ -255,7 +255,7 @@ public class Principal {
                 case 3:
                     //opcion para el crud de pulpo
                     do {
-                        System.out.println("MENU AVESTRUZ");
+                        System.out.println("MENU PULPO");
                         System.out.println("1. Create");
                         System.out.println("2. Read");
                         System.out.println("3. Update");
@@ -352,7 +352,7 @@ public class Principal {
                 case 4:
                     //opcion para el crud Tiburón
                     do {
-                        System.out.println("MENU AVESTRUZ");
+                        System.out.println("MENU TIBURON");
                         System.out.println("1. Create");
                         System.out.println("2. Read");
                         System.out.println("3. Update");
