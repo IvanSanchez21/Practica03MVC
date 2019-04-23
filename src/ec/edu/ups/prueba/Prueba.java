@@ -19,7 +19,7 @@ public class Prueba {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         // TODO code application logic here
         Tiburon tiburon = new Tiburon(3, 34, 5, "plomo", "Salada", 5, 60, "Peces", 1, "Tiburon Tigre", 8, "Oceanos", 70);
         Pulpo pulpo = new Pulpo(25, "negra", 6, 34, "salada", 90, 52, "cangrejos y peces", 2, "Pulpo de Anillo Azul", 12, "oceanos", 16);
@@ -62,5 +62,5 @@ public class Prueba {
         acciones.durmiendo();
         acciones.jugando();
     }
-
+    */
 }
